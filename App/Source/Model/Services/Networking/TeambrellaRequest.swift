@@ -215,7 +215,7 @@ struct TeambrellaRequest {
                 let myModel = try decoder.decode(MeModel.self, from: serverReply.data)
                 success(.me(myModel))
             case .voipConnect:
-                let sessionDescriptionProtocol = try decoder.decode(String.self, from: serverReply.data)
+                let sessionDescriptionProtocol = try decoder.decode(VoipReply.self, from: serverReply.data)
                 success(.voipConnect(sessionDescriptionProtocol))
             case .voipAccept:
                 success(.voipAccept)

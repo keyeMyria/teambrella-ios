@@ -52,7 +52,7 @@ enum TeambrellaResponseType {
     
     case votesList(VotersList)
     case me(MeModel)
-    case voipConnect(String)
+    case voipConnect(VoipReply)
     case voipAccept
     case voipReject
 }

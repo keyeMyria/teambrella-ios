@@ -96,7 +96,7 @@ protocol DAO {
 
     func performRequest(request: TeambrellaRequest)
     
-    func requestVoipConnect(receiver: String, sdp: String) -> Future<String>
+    func requestVoipConnect(receiver: String, sdp: String) -> Future<VoipReply>
     func requestVoipAccept(callerID: String, sdp: String) -> Future<Bool>
     func requestVoipReject(callerID: String) -> Future<Bool>
 }

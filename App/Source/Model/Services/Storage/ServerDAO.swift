@@ -647,16 +647,16 @@ class ServerDAO: DAO {
         }
     }
     
-    func requestVoipConnect(receiver: String, sdp: String) -> Future<String> {
-        let promise = Promise<String>()
+    func requestVoipConnect(receiver: String, sdp: String) -> Future<VoipReply> {
+        let promise = Promise<VoipReply>()
         freshKey { key in
             let body = RequestBody(key: key, payload: ["receiver": receiver,
                                                        "sdp": sdp])
             let request = TeambrellaRequest(type: .voipConnect,
                                             body: body,
                                             success: { response in
-                                                if case .voipConnect(let theirSdp) = response {
-                                                    promise.resolve(with: theirSdp)
+                                                if case .voipConnect(let voipReply) = response {
+                                                    promise.resolve(with: voipReply)
                                                 }
             }, failure: { error in promise.reject(with: error) })
             request.start(server: self.server)
