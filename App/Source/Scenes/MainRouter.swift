@@ -371,6 +371,10 @@ final class MainRouter {
     
     // MARK: Other
 
+    func receiveCall(from name: String, userID: String, sdp: String) {
+        print("Receiving call from: \(name) with sdp: \(sdp)")
+    }
+
     func startNewSession(isDemo: Bool, teamsModel: TeamsModel) {
         service.session = Session(teamsModel: teamsModel, isDemo: isDemo)
 

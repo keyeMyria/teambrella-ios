@@ -88,6 +88,12 @@ final class PushService: NSObject {
                 self?.teambrella.sendDBDump { success in
                     completion()
                 }
+            case .voipConnection:
+                if let name = dict["callerName"] as? String,
+                    let callerID = dict["callerId"] as? String,
+                    let sdp = dict["sdp"] as? String {
+                    self?.router.receiveCall(from: name, userID: callerID, sdp: sdp)
+                }
             }
         }
     }
