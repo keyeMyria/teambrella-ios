@@ -95,4 +95,8 @@ protocol DAO {
     func updateClaimVote(claimID: Int, vote: Float?, lastUpdated: Int64) -> Future<ClaimVoteUpdate>
 
     func performRequest(request: TeambrellaRequest)
+    
+    func requestVoipConnect(receiver: String, sdp: String) -> Future<String>
+    func requestVoipAccept(callerID: String, sdp: String) -> Future<Bool>
+    func requestVoipReject(callerID: String) -> Future<Bool>
 }

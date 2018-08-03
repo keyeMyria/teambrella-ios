@@ -214,6 +214,13 @@ struct TeambrellaRequest {
             case .me:
                 let myModel = try decoder.decode(MeModel.self, from: serverReply.data)
                 success(.me(myModel))
+            case .voipConnect:
+                let sessionDescriptionProtocol = try decoder.decode(String.self, from: serverReply.data)
+                success(.voipConnect(sessionDescriptionProtocol))
+            case .voipAccept:
+                success(.voipAccept)
+            case .voipReject:
+                success(.voipReject)
             default:
                 break
             }

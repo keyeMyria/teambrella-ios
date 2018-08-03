@@ -578,7 +578,11 @@ extension TeammateProfileVC: UITableViewDelegate {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
         if dataSource.isMyProxy && item.type == .call {
-            DeveloperTools.notSupportedAlert(in: self)
+//            DeveloperTools.notSupportedAlert(in: self)
+            log("call button pressed", type: .userInteraction)
+            service.dao.requestVoipConnect(receiver: "test", sdp: "test").observe { sdp in
+                print(sdp)
+            }
             //call my proxy
         }
     }

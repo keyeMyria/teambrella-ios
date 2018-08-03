@@ -647,4 +647,51 @@ class ServerDAO: DAO {
         }
     }
     
+    func requestVoipConnect(receiver: String, sdp: String) -> Future<String> {
+        let promise = Promise<String>()
+        freshKey { key in
+            let body = RequestBody(key: key, payload: ["receiver": receiver,
+                                                       "sdp": sdp])
+            let request = TeambrellaRequest(type: .voipConnect,
+                                            body: body,
+                                            success: { response in
+                                                if case .voipConnect(let theirSdp) = response {
+                                                    promise.resolve(with: theirSdp)
+                                                }
+            }, failure: { error in promise.reject(with: error) })
+            request.start(server: self.server)
+        }
+        return promise
+    }
+    
+    func requestVoipAccept(callerID: String, sdp: String) -> Future<Bool> {
+        let promise = Promise<Bool>()
+        freshKey { key in
+            let body = RequestBody(key: key, payload: ["callerID": callerID,
+                                                       "sdp": sdp])
+            let request = TeambrellaRequest(type: .voipAccept, parameters: ["callerID": callerID,
+                                                                             "sdp": sdp],
+                                            body: body,
+                                            success: { response in
+                                                promise.resolve(with: true)
+            }, failure: { error in promise.reject(with: error) })
+            request.start(server: self.server)
+        }
+        return promise
+    }
+    
+    func requestVoipReject(callerID: String) -> Future<Bool> {
+        let promise = Promise<Bool>()
+        freshKey { key in
+            let body = RequestBody(key: key, payload: ["callerID": callerID])
+            let request = TeambrellaRequest(type: .voipReject, parameters: ["callerID": callerID],
+                                            body: body,
+                                            success: { response in
+                                                promise.resolve(with: true)
+            }, failure: { error in promise.reject(with: error) })
+            request.start(server: self.server)
+        }
+        return promise
+    }
+    
 }
