@@ -491,7 +491,7 @@ extension TeammateProfileVC: UICollectionViewDelegateFlowLayout {
             
             return CGSize(width: wdt, height: 311)
         case .contact:
-            let base: CGFloat = 38
+            let base: CGFloat = 40
             let cellHeight: CGFloat = Constant.socialCellHeight
             return CGSize(width: wdt, height: base + CGFloat(dataSource.socialItems.count) * cellHeight)
         case .dialog:
@@ -578,10 +578,10 @@ extension TeammateProfileVC: UITableViewDelegate {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
         if dataSource.isMyProxy && item.type == .call {
-//            DeveloperTools.notSupportedAlert(in: self)
             log("call button pressed", type: .userInteraction)
-            service.dao.requestVoipConnect(receiver: dataSource.teammateLarge?.basic.id ?? "",
-                                           sdp: "test").observe { reply in
+            let sdp = ""
+            service.dao.requestVoipConnect(receiver: teammateID,
+                                           sdp: sdp).observe { reply in
                                             switch reply {
                                             case let .value(response):
                                                  print(response)

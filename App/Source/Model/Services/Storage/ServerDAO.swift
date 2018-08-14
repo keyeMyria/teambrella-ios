@@ -667,10 +667,9 @@ class ServerDAO: DAO {
     func requestVoipAccept(callerID: String, sdp: String) -> Future<Bool> {
         let promise = Promise<Bool>()
         freshKey { key in
-            let body = RequestBody(key: key, payload: ["callerID": callerID,
+            let body = RequestBody(key: key, payload: ["callerId": callerID,
                                                        "sdp": sdp])
-            let request = TeambrellaRequest(type: .voipAccept, parameters: ["callerID": callerID,
-                                                                             "sdp": sdp],
+            let request = TeambrellaRequest(type: .voipAccept,
                                             body: body,
                                             success: { response in
                                                 promise.resolve(with: true)
@@ -683,8 +682,8 @@ class ServerDAO: DAO {
     func requestVoipReject(callerID: String) -> Future<Bool> {
         let promise = Promise<Bool>()
         freshKey { key in
-            let body = RequestBody(key: key, payload: ["callerID": callerID])
-            let request = TeambrellaRequest(type: .voipReject, parameters: ["callerID": callerID],
+            let body = RequestBody(key: key, payload: ["callerId": callerID])
+            let request = TeambrellaRequest(type: .voipReject,
                                             body: body,
                                             success: { response in
                                                 promise.resolve(with: true)

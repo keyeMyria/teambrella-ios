@@ -1011,8 +1011,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8T-u0-Pp7" userLabel="BackgroundView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="210"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8T-u0-Pp7" userLabel="BackgroundView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="250"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-Sw-h1z" customClass="BlockHeaderLabel" customModule="Surilla" customModuleProvider="target">
@@ -1041,28 +1041,27 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FACEBOOK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-nx-8VM" customClass="InfoLabel" customModule="Surilla" customModuleProvider="target">
-                                                                        <rect key="frame" x="44" y="21" width="54.5" height="12"/>
+                                                                        <rect key="frame" x="44" y="19" width="54.5" height="12"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebook.com/jimmywong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="seq-A6-jmI" customClass="ChatTextLabel" customModule="Surilla" customModuleProvider="target">
-                                                                        <rect key="frame" x="44" y="33" width="169" height="12"/>
+                                                                        <rect key="frame" x="44" y="31.5" width="169" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="seq-A6-jmI" firstAttribute="bottom" secondItem="d7O-F7-70w" secondAttribute="bottom" id="0xy-Gs-lo7"/>
-                                                                    <constraint firstItem="seq-A6-jmI" firstAttribute="top" secondItem="cyg-GN-LRF" secondAttribute="centerY" id="A8S-2e-I8B"/>
                                                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="seq-A6-jmI" secondAttribute="trailing" id="BBB-aT-qON"/>
                                                                     <constraint firstItem="d7O-F7-70w" firstAttribute="leading" secondItem="cyg-GN-LRF" secondAttribute="leading" id="Mvc-wT-4r9"/>
                                                                     <constraint firstItem="wmO-nx-8VM" firstAttribute="leading" secondItem="d7O-F7-70w" secondAttribute="trailing" constant="20" id="Voa-ty-f3k"/>
                                                                     <constraint firstItem="seq-A6-jmI" firstAttribute="leading" secondItem="wmO-nx-8VM" secondAttribute="leading" id="WYr-aB-xy2"/>
                                                                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="wmO-nx-8VM" secondAttribute="trailing" id="aGC-vJ-y0F"/>
                                                                     <constraint firstItem="d7O-F7-70w" firstAttribute="centerY" secondItem="cyg-GN-LRF" secondAttribute="centerY" id="jLE-PB-SQQ"/>
-                                                                    <constraint firstItem="wmO-nx-8VM" firstAttribute="bottom" secondItem="cyg-GN-LRF" secondAttribute="centerY" id="lT9-Vd-akd"/>
+                                                                    <constraint firstItem="wmO-nx-8VM" firstAttribute="top" secondItem="d7O-F7-70w" secondAttribute="top" constant="-2" id="r3N-i1-pvg"/>
+                                                                    <constraint firstItem="seq-A6-jmI" firstAttribute="baseline" secondItem="d7O-F7-70w" secondAttribute="bottom" id="sfy-PU-A43"/>
                                                                 </constraints>
                                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                                             </tableViewCellContentView>

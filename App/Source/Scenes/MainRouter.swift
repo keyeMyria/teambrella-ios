@@ -373,6 +373,7 @@ final class MainRouter {
 
     func receiveCall(from name: String, userID: String, sdp: String) {
         print("Receiving call from: \(name) with sdp: \(sdp)")
+        service.dao.requestVoipAccept(callerID: userID, sdp: "reply sdp test")
     }
 
     func startNewSession(isDemo: Bool, teamsModel: TeamsModel) {
