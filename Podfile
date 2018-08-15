@@ -35,7 +35,7 @@ def swift_frameworks_pods
   pod 'SwiftMessages'
   pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
 
-  pod "GoogleWebRTC", :modular_headers => true
+  pod "GoogleWebRTC"#, :modular_headers => true
 
   pod 'Fabric'
   pod 'Crashlytics'

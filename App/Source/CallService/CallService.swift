@@ -19,16 +19,9 @@ class CallService: NSObject {
 
     var connection: Connection?
 
-    @discardableResult
-    func createConnection() -> Connection {
+    func createConnection() {
         let connection = Assembly.connection()
-        connection.offer(completion: { result in
-            print("Connection result: \(result)")
-        }) { error in
-            print("Connection offer failed with error: \(String(describing: error))")
-        }
         self.connection = connection
-        return connection
     }
 
     func receiveACall(from name: String, userID: String) {
@@ -41,13 +34,16 @@ class CallService: NSObject {
     func makeACall(to name: String, userID: String, completion: @escaping (String?, Error?) -> Void) {
         let uuid = UUID(uuidString: userID) ?? UUID()
         print("userID: \(userID), uuid: \(uuid)")
+        createConnection()
         let controller = CXCallController()
         let transaction = CXTransaction(action: CXStartCallAction(call: uuid,
                                                                   handle: CXHandle(type: .generic, value: name)))
         controller.request(transaction, completion: { error in completion(nil, error) })
         connection?.offer(completion: { sdp in
             completion(sdp, nil)
-        })
+        }) { error in
+            print("Connection offer failed with error: \(String(describing: error))")
+        }
     }
 }
 
