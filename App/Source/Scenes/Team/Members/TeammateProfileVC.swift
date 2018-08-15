@@ -55,6 +55,8 @@ final class TeammateProfileVC: UIViewController, Routable {
         let visibleCells = collectionView.visibleCells
         return visibleCells.filter { $0 is VotingRiskCell }.first as? VotingRiskCell
     }
+
+    lazy var callService: CallService = CallService()
     
     private var currentRiskVote: Double?
     
@@ -577,17 +579,25 @@ extension TeammateProfileVC: UITableViewDelegate {
         if item.type == .facebook, let url = URL(string: item.address) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-        if dataSource.isMyProxy && item.type == .call {
+        if dataSource.isMyProxy && item.type == .call, let name = dataSource.teammateLarge?.basic.name.entire {
             log("call button pressed", type: .userInteraction)
-            let sdp = ""
-            service.dao.requestVoipConnect(receiver: teammateID,
-                                           sdp: sdp).observe { reply in
-                                            switch reply {
-                                            case let .value(response):
-                                                 print(response)
-                                            case let .error(error):
-                                                print("error: \(error)")
-                                            }
+            let id: String = teammateID
+            callService.makeACall(to: name, userID: teammateID) { string, error in
+                guard let sdp = string else {
+                    print("\(String(describing: string)), error: \(String(describing: error))")
+                    return
+                }
+
+                service.dao.requestVoipConnect(receiver: id,
+                                               sdp: sdp).observe { reply in
+                                                switch reply {
+                                                case let .value(response):
+                                                    print(response)
+                                                case let .error(error):
+                                                    print("error: \(error)")
+                                                }
+            }
+
             }
             //call my proxy
         }

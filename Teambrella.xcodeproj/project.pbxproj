@@ -1016,6 +1016,14 @@
 		6DBBF8011F9A561600524B1E /* Multisig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBF7FF1F9A561600524B1E /* Multisig.swift */; };
 		6DBBF8041F9A5F6800524B1E /* Unconfirmed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBF8021F9A5F6800524B1E /* Unconfirmed.swift */; };
 		6DBD695F2093864000D1524F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD695D2093864000D1524F /* GoogleService-Info.plist */; };
+		6DBD885F21232144004817FE /* CallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885B21232143004817FE /* CallRequest.swift */; };
+		6DBD886021232144004817FE /* CallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885B21232143004817FE /* CallRequest.swift */; };
+		6DBD886121232144004817FE /* CallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885C21232143004817FE /* CallService.swift */; };
+		6DBD886221232144004817FE /* CallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885C21232143004817FE /* CallService.swift */; };
+		6DBD886321232144004817FE /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885D21232143004817FE /* Assembly.swift */; };
+		6DBD886421232144004817FE /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885D21232143004817FE /* Assembly.swift */; };
+		6DBD886521232144004817FE /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885E21232143004817FE /* Connection.swift */; };
+		6DBD886621232144004817FE /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD885E21232143004817FE /* Connection.swift */; };
 		6DBF492C1F80F21E00B236E2 /* HomePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF49281F80EF2600B236E2 /* HomePresentationController.swift */; };
 		6DBF492D1F80F22300B236E2 /* AnimationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF492A1F80F10B00B236E2 /* AnimationTools.swift */; };
 		6DCA41BF20D29E1900B741BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA41BE20D29E1900B741BA /* Assets.xcassets */; };
@@ -1616,6 +1624,10 @@
 		6DBBF7FF1F9A561600524B1E /* Multisig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multisig.swift; sourceTree = "<group>"; };
 		6DBBF8021F9A5F6800524B1E /* Unconfirmed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unconfirmed.swift; sourceTree = "<group>"; };
 		6DBD695D2093864000D1524F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DBD885B21232143004817FE /* CallRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallRequest.swift; sourceTree = "<group>"; };
+		6DBD885C21232143004817FE /* CallService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallService.swift; sourceTree = "<group>"; };
+		6DBD885D21232143004817FE /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		6DBD885E21232143004817FE /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		6DBF49281F80EF2600B236E2 /* HomePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresentationController.swift; path = Scenes/Home/HomePresentationController.swift; sourceTree = "<group>"; };
 		6DBF492A1F80F10B00B236E2 /* AnimationTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationTools.swift; path = Helpers/AnimationTools.swift; sourceTree = "<group>"; };
 		6DC230691ED07F0500FAC330 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -2731,6 +2743,7 @@
 		6DA475D61E8BB9F000B56D9B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6DBD885A21232121004817FE /* CallService */,
 				6DA475D71E8BBA0800B56D9B /* Networking */,
 				6DAF1CB91F58562E00421C5A /* PushService */,
 				6DE3947E1F790A0100784ECD /* Reachability */,
@@ -2747,6 +2760,7 @@
 				6D90304320B80469001775ED /* CoverageLocalizer.swift */,
 				6DD4DF9E20D8093C0081672F /* Printer.swift */,
 				6D43291620D949490015C369 /* QRCodeManager.swift */,
+				6DBD885D21232143004817FE /* Assembly.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -2936,6 +2950,16 @@
 				6D5F089920A9BEAC0061A6E8 /* ChatClaimPaidCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		6DBD885A21232121004817FE /* CallService */ = {
+			isa = PBXGroup;
+			children = (
+				6DBD885B21232143004817FE /* CallRequest.swift */,
+				6DBD885C21232143004817FE /* CallService.swift */,
+				6DBD885E21232143004817FE /* Connection.swift */,
+			);
+			path = CallService;
 			sourceTree = "<group>";
 		};
 		6DC248821F5EAAFF00D9396D /* Empty */ = {
@@ -3212,6 +3236,7 @@
 				6D05254420A5DE3B000B3247 /* Embed App Extensions */,
 				6DCA41E020D29E1A00B741BA /* Embed Watch Content */,
 				6DF8B92320DBB77B00D9D831 /* Crashlytics */,
+				6DF5A5651DCFF21C3E253D43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3258,6 +3283,7 @@
 				6D8A62A920C1A1A1003CD95B /* Embed Watch Content */,
 				6D1B288220C7072F003B2D32 /* Embed App Extensions */,
 				6DF8B92120DBB75300D9D831 /* Crashlytics */,
+				3A398895F7C1D66C18ED2B55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3780,6 +3806,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3A398895F7C1D66C18ED2B55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Surilla/Pods-Surilla-frameworks.sh",
+				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Surilla/Pods-Surilla-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5367BD3EC56B804CAF87F366 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3986,6 +4030,24 @@
 			shellPath = /bin/sh;
 			shellScript = "cp \"${SRCROOT}/Firebase/Surilla-GoogleService-Info.plist\" \"${SRCROOT}/GoogleService-Info.plist\"\n";
 		};
+		6DF5A5651DCFF21C3E253D43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Teambrella/Pods-Teambrella-frameworks.sh",
+				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Teambrella/Pods-Teambrella-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6DF8B92120DBB75300D9D831 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4091,6 +4153,7 @@
 				6D05235120A5D838000B3247 /* AmountWithCurrency.swift in Sources */,
 				6D05235220A5D838000B3247 /* PlainButton.swift in Sources */,
 				6D05235320A5D838000B3247 /* ProxyForDataSource.swift in Sources */,
+				6DBD886221232144004817FE /* CallService.swift in Sources */,
 				6D05235420A5D838000B3247 /* TxInput.swift in Sources */,
 				6D05235520A5D838000B3247 /* RoundedCornersView.swift in Sources */,
 				6D05235620A5D838000B3247 /* CryptoCurrency.swift in Sources */,
@@ -4171,6 +4234,7 @@
 				6D7A01AB20B5BC77006A30FA /* WithdrawVC.swift in Sources */,
 				6D05239C20A5D838000B3247 /* ProxyForCellModel.swift in Sources */,
 				6D05239D20A5D838000B3247 /* TeamServerImpl.swift in Sources */,
+				6DBD886621232144004817FE /* Connection.swift in Sources */,
 				6D8A624B20C002E5003CD95B /* PushKitWorker.swift in Sources */,
 				6D05239E20A5D838000B3247 /* SaneText.swift in Sources */,
 				6D05239F20A5D838000B3247 /* DAO.swift in Sources */,
@@ -4427,6 +4491,7 @@
 				6D05249120A5D838000B3247 /* StyledLabels.swift in Sources */,
 				6D05249220A5D838000B3247 /* Navigator.swift in Sources */,
 				6D05249320A5D838000B3247 /* NewClaimCell.swift in Sources */,
+				6DBD886421232144004817FE /* Assembly.swift in Sources */,
 				6D05249420A5D838000B3247 /* RiskCell.swift in Sources */,
 				6D05249520A5D838000B3247 /* URLBuilder.swift in Sources */,
 				6D05249620A5D838000B3247 /* KingfisherSource.swift in Sources */,
@@ -4440,6 +4505,7 @@
 				6D05249E20A5D838000B3247 /* WithdrawCell.swift in Sources */,
 				6D05249F20A5D838000B3247 /* ServerStatus.swift in Sources */,
 				6D0524A020A5D838000B3247 /* TeamFeedCell.swift in Sources */,
+				6DBD886021232144004817FE /* CallRequest.swift in Sources */,
 				6D0524A120A5D838000B3247 /* String.swift in Sources */,
 				6D0524A220A5D838000B3247 /* SortVC.swift in Sources */,
 				6D0524A320A5D838000B3247 /* ChatVariousContentCell.swift in Sources */,
@@ -4514,6 +4580,7 @@
 				6D4E5C271F7AB6870020DEE2 /* AmountWithCurrency.swift in Sources */,
 				6D4E5C281F7AB6870020DEE2 /* PlainButton.swift in Sources */,
 				6D4E5C291F7AB6870020DEE2 /* ProxyForDataSource.swift in Sources */,
+				6DBD886121232144004817FE /* CallService.swift in Sources */,
 				6D4E5C2A1F7AB6870020DEE2 /* TxInput.swift in Sources */,
 				6D4E5C2B1F7AB6870020DEE2 /* RoundedCornersView.swift in Sources */,
 				6D4E5C2C1F7AB6870020DEE2 /* CryptoCurrency.swift in Sources */,
@@ -4594,6 +4661,7 @@
 				6D4E5C661F7AB6870020DEE2 /* XIBInitable.swift in Sources */,
 				6D7A01AA20B5BC77006A30FA /* WithdrawVC.swift in Sources */,
 				6D4E5C671F7AB6870020DEE2 /* ProxyForCellModel.swift in Sources */,
+				6DBD886521232144004817FE /* Connection.swift in Sources */,
 				6D1EC3ED202B0F3A00F0541C /* TeamServerImpl.swift in Sources */,
 				6D8A624C20C00323003CD95B /* PushKitWorker.swift in Sources */,
 				6D716BC02021E747001E2614 /* SaneText.swift in Sources */,
@@ -4850,6 +4918,7 @@
 				6D4E5D311F7AB6870020DEE2 /* StyledLabels.swift in Sources */,
 				6D4E5D331F7AB6870020DEE2 /* Navigator.swift in Sources */,
 				6D106F0C203AD4D70049E92E /* NewClaimCell.swift in Sources */,
+				6DBD886321232144004817FE /* Assembly.swift in Sources */,
 				6D4E5D341F7AB6870020DEE2 /* RiskCell.swift in Sources */,
 				6D59FD191FBC9693006C0A2B /* URLBuilder.swift in Sources */,
 				6D4E5D351F7AB6870020DEE2 /* KingfisherSource.swift in Sources */,
@@ -4863,6 +4932,7 @@
 				94F0CF601FD1B66E007BE39E /* WithdrawCell.swift in Sources */,
 				6D7CC5A61FF3D49600ED46E3 /* ServerStatus.swift in Sources */,
 				6D4E5D3F1F7AB6870020DEE2 /* TeamFeedCell.swift in Sources */,
+				6DBD885F21232144004817FE /* CallRequest.swift in Sources */,
 				6D4E5D401F7AB6870020DEE2 /* String.swift in Sources */,
 				6D4E5D411F7AB6870020DEE2 /* SortVC.swift in Sources */,
 				6D4E5D421F7AB6870020DEE2 /* ChatVariousContentCell.swift in Sources */,

@@ -1011,8 +1011,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8T-u0-Pp7" userLabel="BackgroundView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="250"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8T-u0-Pp7" userLabel="BackgroundView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="210"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-Sw-h1z" customClass="BlockHeaderLabel" customModule="Surilla" customModuleProvider="target">
